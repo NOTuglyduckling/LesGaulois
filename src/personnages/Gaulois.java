@@ -24,11 +24,28 @@ public class Gaulois {
 	+ romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
+	public void recevoirCoup(int forceCoup) {
+		force -= forceCoup;
+		if (force > 0) {
+			parler("Aie");
+		} else {
+			parler("J'abandonne...");
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
+	
+	
 	public static void main (String[] args) {
-		//TODO créer un main permettant de tester la classe Gaulois
+		Gaulois asterix = new Gaulois("Asterix",8);
+		System.out.println(asterix.getNom());
+		System.out.println(asterix);
+		asterix.prendreParole();
+		asterix.parler("Bonjour");
+		asterix.frapper(marcus);
+		
 	}
 }
