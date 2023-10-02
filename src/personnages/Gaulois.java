@@ -27,11 +27,7 @@ public class Gaulois {
 		return "Le gaulois " + nom + " : ";
 	}
 	
-//	public void frapper(Romain romain) {
-//		System.out.println(nom + " envoie un grand coup dans la mâchoire de "
-//	+ romain.getNom());
-//		romain.recevoirCoup((force / 3)*effetPotion);
-//	}
+
 	public void recevoirCoup(int forceCoup) {
 		force -= forceCoup;
 		if (force > 0) {
@@ -41,8 +37,6 @@ public class Gaulois {
 		}
 	}
 	
-	// start ajout
-	
 
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
@@ -51,14 +45,7 @@ public class Gaulois {
 			this.trophees[nbTrophees] = tropheesRecu[i];
 		}
 	}
-		
-
-	
-//	@Override
-//	public String toString() {
-//		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
-//	}
-	
+			
 	
 	public static void main (String[] args) {
 		Gaulois asterix = new Gaulois("Asterix",8);
