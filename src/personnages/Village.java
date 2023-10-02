@@ -28,19 +28,27 @@ public class Village {
 		return villageois[place];
 	}
 	
-	public void afficherVillageois(Village village) {
+	public void afficherVillageois() {
 		System.out.println("Dans le village du chef" + chef + " vivent les legendaires gaulois :");
-		
+			for (int i = 0; i<nbVillageois; i++) {
+				System.out.println("- " + villageois[i].getNom());
+			}
 	}
 	
 	
 	public static void main(String[] args) {
 		Village village = new Village("Village des Irréductibles",30);
-		Gaulois asterix = new Gaulois("Asterix",8);
+//		Gaulois gaulois = village.trouverHabitant(30);
+		       // ERREUR : Index 30 out of bounds for length 3
 		Chef abra = new Chef("Abraracourcix", 6, village);
 		village.setChef(abra);
-		Gaulois asterix = village.trouverHabitant(1);
-		System.out.println(gaulois);
+		Gaulois asterix = new Gaulois("Asterix",8);
+		village.ajouterHabitant(asterix, 0);
+//		Gaulois asterix = village.trouverHabitant(1);
+//		System.out.println(gaulois);
+		Gaulois obelix = new Gaulois("Obélix",25);
+		village.ajouterHabitant(obelix, 1);
+		village.afficherVillageois();
 	}
 
 }
